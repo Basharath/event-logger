@@ -1,8 +1,10 @@
 import React from 'react';
+
+import Notes from './components/Notes';
 import './App.css';
 
 function App() {
-  return <h1>Hello,world!</h1>;
+  return <Notes />;
 }
 
 export default App;
