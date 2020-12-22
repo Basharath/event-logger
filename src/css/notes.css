@@ -1,3 +1,257 @@
+:root {
+  --primary: #d93b3b;
+  --primaryhover: hsl(0, 68%, 30%);
+  --secondary: #f2b950;
+  --dark: #3e3e40;
+  --blue: #4a74ff;
+  --light: lightblue;
+  --white: #fbfbfb;
+}
+
 .main {
-  transform: translateY(-30%);
+  width: 500px;
+  margin: 10px;
+  /* margin: auto; */
+}
+
+.main h1,
+.main h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+.main .event-form {
+  text-align: center;
+}
+
+.eventInput {
+  border: 1px solid var(--dark);
+  border-right: transparent;
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: var(--dark);
+  outline: none;
+  width: 80%;
+  height: 30px;
+  font-weight: 550;
+}
+
+small {
+  display: block;
+  color: var(--primary);
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  outline: none;
+}
+
+.btn.add-event {
+  padding: 6px 10px;
+  width: 20%;
+  height: 30px;
+  border-radius: 0 10px 10px 0;
+  border: 1px solid transparent;
+}
+
+.btn.add-event:hover {
+  background-color: var(--primaryhover);
+}
+
+.btn.btn-update {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: var(--blue);
+}
+
+.btn-update:hover {
+  background-color: rgba(65, 107, 247, 0.8);
+}
+
+.sort-column {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2b678c;
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-size: 15px;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.1), -1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sort-column span:first-child {
+  width: 30%;
+}
+
+.sort-column span:nth-child(3) {
+  width: 20%;
+}
+
+.event-item {
+  display: flex;
+  background-color: var(--white);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: var(--dark);
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.1), -1px 1px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.event-item:hover {
+  box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.2), -1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary);
+}
+
+.event-name {
+  width: 50%;
+  /* padding-right: 20px; */
+}
+
+.event-date {
+  width: 30%;
+}
+
+.event-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--dark);
+  vertical-align: middle;
+  font-size: 10px;
+  color: var(--white);
+  margin: 0 15px 0 15px;
+}
+
+.event-dates-container {
+  background-color: rgb(235, 228, 228, 0.6);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.expand-icon {
+  margin-left: 15px;
+}
+.event-dates-block {
+  padding: 5px 5px 0.1px 5px;
+}
+
+.event-dates-item,
+.event-dates-remove-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary);
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.event-dates-remove-all {
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.event-date-remove {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.event-date-remove:hover {
+  background-color: var(--primary);
+}
+
+/* Modal */
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.modal {
+  text-align: center;
+  width: 330px;
+  align-self: center;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-yes {
+  padding: 5px 20px;
+  margin: 15px 15px;
+  background-color: tomato;
+}
+
+.btn-yes:hover {
+  background: hsl(9, 100%, 60%);
+}
+
+.btn-no {
+  padding: 5px 20px;
+  margin: 15px 15px;
+  background-color: mediumaquamarine;
+}
+
+.btn-no:hover {
+  background-color: hsl(160, 51%, 55%);
+}
+
+@media (max-width: 500px) {
+  .main {
+    width: 330px;
+  }
+  .btn.add-event {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 330px) {
+  .main {
+    width: 280px;
+  }
+  .btn.add-event {
+    font-size: 7px;
+  }
+
+  .modal {
+    width: 250px;
+  }
 }
