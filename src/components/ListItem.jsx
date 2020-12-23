@@ -1,39 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import ItemExpand from './ItemExpand';
+import { EventContext } from './EventLogger';
 
-export default function ListItem({
-  eventItem,
-  currentItem,
-  onExpand,
-  onUpdate,
-  expand,
-}) {
+export default function ListItem({ eventItem }) {
+  const { handleUpdate, handleExpand, currentItem, expand } = useContext(
+    EventContext
+  );
   const { id, event, dates } = eventItem;
   const isExpand = expand && currentItem.id === id;
   return (
     <>
-      <div className="event-item" onClick={(e) => onExpand(e, id)}>
-        <span className="event-name">{event}</span>
-        <span className="event-date">{dates[0].slice(0, 10)}</span>
+      <div className={'event-item' + (isExpand ? ' expand' : '')}>
+        <span className="event-name" onClick={() => handleExpand(id)}>
+          {event}
+        </span>
+        <span className="event-date" onClick={() => handleExpand(id)}>
+          {dates[0].slice(0, 12)}
+        </span>
         <i
           className={'expand-icon fas fa-eye' + (isExpand ? '-slash' : '')}
-          onClick={(e) => onExpand(e, id)}
+          onClick={() => handleExpand(id)}
         ></i>
         <span className="event-number" title="Current log count">
           {dates.length}
         </span>
         <button
-          onClick={() => onUpdate(id)}
+          onClick={() => handleUpdate(id)}
           className="btn btn-update"
           title="Click to log now"
         >
           <i className="fa fa-plus"></i>
         </button>
       </div>
-      <div className="event-dates-container">
-        {isExpand && <ItemExpand item={currentItem} />}
-      </div>
+      <div className="event-dates-container">{isExpand && <ItemExpand />}</div>
     </>
   );
 }

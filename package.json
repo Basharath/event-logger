@@ -1,5 +1,5 @@
 {
-  "name": "last_event_notes",
+  "name": "event_logger",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

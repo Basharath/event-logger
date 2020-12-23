@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Notes from './components/Notes';
+import EventLogger from './components/EventLogger';
 import './App.css';
 
 function App() {
-  return <Notes />;
+  return <EventLogger />;
 }
 
 export default App;
