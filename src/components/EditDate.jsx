@@ -10,6 +10,7 @@ export default function EditDate({ styles, id, index }) {
     setShow(false);
     handleDateChange(id, index, date);
   }
+  const maxDate = new Date().toISOString().slice(0, 10);
   return (
     <>
       {show && (
@@ -19,6 +20,7 @@ export default function EditDate({ styles, id, index }) {
               type="datetime-local"
               onChange={({ currentTarget }) => setDate(currentTarget.value)}
               className="calendar-input"
+              max={maxDate}
             />
             <button className="btn btn-calendar" onClick={handleSubmit}>
               Update

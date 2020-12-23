@@ -248,6 +248,10 @@ small {
   background-color: var(--dark);
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 .btn-calendar {
   width: 30%;
 }

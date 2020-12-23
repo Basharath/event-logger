@@ -12,7 +12,7 @@ export default function ItemExpand() {
   const handleDateClick = (e, index) => {
     const toggle = !edit;
     const y = window.pageYOffset;
-    const mouse = { left: e.clientX - 50, top: e.clientY + y - 80 };
+    const mouse = { left: e.clientX - 150, top: e.clientY + y - 80 };
     setMousePosition(mouse);
     setItemIndex(index);
     setEdit(toggle);

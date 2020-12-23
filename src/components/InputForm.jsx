@@ -15,6 +15,8 @@ export default function InputForm({
         onChange={handleChange}
         className="eventInput"
         placeholder="e.g., Haircut"
+        maxLength="50"
+        autoFocus
       />
       <button className="btn add-event">Add Event</button>
     </form>
