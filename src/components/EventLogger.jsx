@@ -10,6 +10,7 @@ import {
   getStorage,
   setStorage,
 } from '../utils/functions';
+import Github from './Github';
 import '../css/eventLogger.css';
 
 export const EventContext = createContext();
@@ -161,6 +162,7 @@ export default function Notes() {
         handleDateChange,
       }}
     >
+      <Github github="https://github.com/Basharath/event-logger" />
       <div className="main">
         <h1>Event logger</h1>
         <InputForm
