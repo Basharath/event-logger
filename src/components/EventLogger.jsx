@@ -163,6 +163,7 @@ export default function Notes() {
       }}
     >
       <Github github="https://github.com/Basharath/event-logger" />
+      {/* <div className="bar"></div> */}
       <div className="main">
         <h1>Event logger</h1>
         <InputForm
