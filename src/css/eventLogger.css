@@ -17,9 +17,8 @@
 
 .main {
   width: 500px;
-  margin: 10px;
   font-size: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .main h1,
@@ -76,7 +75,7 @@ small {
   background-color: var(--info);
 }
 
-.btn.add-event:active {
+.btn.add-event:hover {
   background-color: var(--infohover);
 }
 
@@ -87,7 +86,7 @@ small {
   background-color: var(--info);
 }
 
-.btn-update:active {
+.btn-update:hover {
   background-color: var(--infohover);
 }
 
@@ -135,10 +134,10 @@ small {
   /* position: relative; */
 }
 
-/* .event-item:active {
+.event-item:hover {
   box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.2), -1px 1px 5px rgba(0, 0, 0, 0.2);
   background-color: var(--secondary);
-} */
+}
 
 .event-item.expand {
   background-color: hsl(160, 70%, 50%);
@@ -211,7 +210,7 @@ small {
   cursor: pointer;
 }
 
-.change-event-date:active {
+.change-event-date:hover {
   color: var(--primary);
 }
 
@@ -228,7 +227,7 @@ small {
   cursor: pointer;
 }
 
-.event-date-remove:active {
+.event-date-remove:hover {
   background-color: var(--primary);
 }
 
@@ -302,7 +301,7 @@ small {
   background-color: tomato;
 }
 
-.btn-yes:active {
+.btn-yes:hover {
   background: hsl(9, 100%, 60%);
 }
 
@@ -312,7 +311,7 @@ small {
   background-color: mediumaquamarine;
 }
 
-.btn-no:active {
+.btn-no:hover {
   background-color: hsl(160, 51%, 55%);
 }
 
@@ -360,10 +359,3 @@ small {
     width: 250px;
   }
 }
-
-/* @media (hover: on-demand) {
-  .event-item {
-    box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.2), -1px 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: var(--secondary);
-  }
-} */
