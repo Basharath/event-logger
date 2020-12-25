@@ -16,7 +16,7 @@ export default function InputForm({
         className="eventInput"
         placeholder="e.g., Haircut"
         maxLength="50"
-        autoFocus
+        // autoFocus
       />
       <button className="btn add-event">Add Event</button>
     </form>

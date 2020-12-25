@@ -37,7 +37,7 @@ export default function Notes() {
     setStorage('logger', eventList);
   }, [mount, eventList]);
 
-  const handleSort = (param1, param2) => {
+  const handleSort = async (param1, param2) => {
     const list = getSorted(eventList, param1, param2);
 
     const toggle = sort;
@@ -46,9 +46,10 @@ export default function Notes() {
     setSort(!toggle);
 
     setEventList(list);
+    await navigator.vibrate(15);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!event) {
@@ -77,6 +78,7 @@ export default function Notes() {
     setEvent('');
 
     setStorage('logger', eventList);
+    await navigator.vibrate(20);
   };
 
   const handleChange = ({ currentTarget }) => {
@@ -88,11 +90,10 @@ export default function Notes() {
     setModal(value);
   };
 
-  const handleUpdate = (id) => {
+  const handleUpdate = async (id) => {
     const list = [...eventList];
     const index = list.findIndex((i) => i.id === id);
     const item = list[index];
-
     const now = new Date();
     const date = getFormattedDate(now);
     const time = now.getTime();
@@ -100,9 +101,10 @@ export default function Notes() {
     item.time = time;
     list.splice(index, 1, item);
     setEventList(list);
+    await navigator.vibrate(20);
   };
 
-  const handleExpand = (id) => {
+  const handleExpand = async (id) => {
     const toggle = !expand;
     const list = [...eventList];
     const item = list.filter((i) => i.id === id)[0];
@@ -113,9 +115,10 @@ export default function Notes() {
       setExpand(true);
       setCurrentItem(item);
     }
+    await navigator.vibrate(15);
   };
 
-  const handleDateChange = (id, index, date) => {
+  const handleDateChange = async (id, index, date) => {
     if (!date) return;
     const list = [...eventList];
     const itemIndex = list.findIndex((i) => i.id === id);
@@ -125,12 +128,14 @@ export default function Notes() {
 
     list.splice(itemIndex, 1, item);
     setEventList(list);
+    await navigator.vibrate(15);
   };
 
-  const handleRemove = (id, index) => {
+  const handleRemove = async (id, index) => {
     const list = [...eventList];
     const itemIndex = list.findIndex((i) => i.id === id);
     const item = list[itemIndex];
+    await navigator.vibrate(15);
 
     if (index !== undefined && item.dates.length > 1) {
       item.dates.splice(index, 1);
@@ -142,13 +147,14 @@ export default function Notes() {
     }
   };
 
-  const deleteList = () => {
+  const deleteList = async () => {
     const list = [...eventList];
     const index = permissionId;
     list.splice(index, 1);
 
     setPermissionId('');
     setEventList(list);
+    await navigator.vibrate(20);
   };
 
   return (
@@ -162,8 +168,8 @@ export default function Notes() {
         handleDateChange,
       }}
     >
-      <Github github="https://github.com/Basharath/event-logger" />
-      {/* <div className="bar"></div> */}
+      {/* <Github github="https://github.com/Basharath/event-logger" /> */}
+      <div className="bar"></div>
       <div className="main">
         <h1>Event logger</h1>
         <InputForm

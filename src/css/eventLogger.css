@@ -1,10 +1,10 @@
 :root {
   --primary: #d93b3b;
-  --primaryhover: hsl(180, 68%, 20%);
   --secondary: #f2b950;
   --info: hsl(180, 50%, 30%);
+  --infohover: hsl(180, 68%, 20%);
   --dark: #3e3e40;
-  --blue: #4a74ff;
+  --blue: #1f426f;
   --light: lightblue;
   --white: #fbfbfb;
 }
@@ -17,8 +17,9 @@
 
 .main {
   width: 500px;
-  /* margin: 10px; */
+  margin: 10px;
   font-size: 15px;
+  margin-bottom: 25px;
 }
 
 .main h1,
@@ -75,19 +76,19 @@ small {
   background-color: var(--info);
 }
 
-.btn.add-event:hover {
-  background-color: var(--primaryhover);
+.btn.add-event:active {
+  background-color: var(--infohover);
 }
 
 .btn.btn-update {
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: var(--info);
 }
 
-.btn-update:hover {
-  background-color: rgba(65, 107, 247, 0.8);
+.btn-update:active {
+  background-color: var(--infohover);
 }
 
 .sort-column {
@@ -100,8 +101,12 @@ small {
   color: var(--white);
   /* font-size: 15px; */
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.1), -1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sort-column .fa-sort {
+  cursor: pointer;
 }
 
 .sort-column span:first-child {
@@ -130,10 +135,10 @@ small {
   /* position: relative; */
 }
 
-.event-item:hover {
+/* .event-item:active {
   box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.2), -1px 1px 5px rgba(0, 0, 0, 0.2);
   background-color: var(--secondary);
-}
+} */
 
 .event-item.expand {
   background-color: hsl(160, 70%, 50%);
@@ -156,7 +161,7 @@ small {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background-color: var(--dark);
+  background-color: var(--blue);
   vertical-align: middle;
   font-size: 10px;
   color: var(--white);
@@ -206,7 +211,7 @@ small {
   cursor: pointer;
 }
 
-.change-event-date:hover {
+.change-event-date:active {
   color: var(--primary);
 }
 
@@ -223,7 +228,7 @@ small {
   cursor: pointer;
 }
 
-.event-date-remove:hover {
+.event-date-remove:active {
   background-color: var(--primary);
 }
 
@@ -297,7 +302,7 @@ small {
   background-color: tomato;
 }
 
-.btn-yes:hover {
+.btn-yes:active {
   background: hsl(9, 100%, 60%);
 }
 
@@ -307,7 +312,7 @@ small {
   background-color: mediumaquamarine;
 }
 
-.btn-no:hover {
+.btn-no:active {
   background-color: hsl(160, 51%, 55%);
 }
 
@@ -315,6 +320,12 @@ small {
   .main {
     width: 340px;
     font-size: 14px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   .btn.add-event {
     font-size: 13px;
@@ -349,3 +360,10 @@ small {
     width: 250px;
   }
 }
+
+/* @media (hover: on-demand) {
+  .event-item {
+    box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.2), -1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--secondary);
+  }
+} */
